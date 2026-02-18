@@ -3,18 +3,117 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Group1_Login.View"
         mc:Ignorable="d"
-        Title="Login" Height="450" Width="800">
-    <Grid Background="#1C352D">
-        <Label Content="VICTORIA" HorizontalAlignment="Center" Margin="0, 62, 0, 0" FontSize="60" FontWeight="Bold" FontFamily="Arial" Foreground="#FFF9E5" />
+        Title="Login"
+        Height="500"
+        Width="900"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#1C352D">
 
-        <StackPanel  Margin="136,142,136,52">
-            <TextBlock Text="Username:" FontSize="16" Margin="0, 20, 0, 5" Foreground="#FFF9E5" />
-            <TextBox x:Name="UserName_txt" Height="30" FontSize="14"  Width="441" Opacity="1" Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}" Foreground="#1E201E" />
-            <TextBlock Text="Password:" FontSize="16" Margin="0, 20, 0, 5" Foreground="#FFF9E5"/>
-            <PasswordBox x:Name="Password_txt" Height="30" FontSize="14" Width="441" Opacity="1" Foreground="#1E201E"  />
-            <Button Name="Login_btn" Content="Login" Margin=" 30" Height="40" Width="100" Command="{Binding LoginCommand}" CommandParameter="{Binding ElementName=Password_txt}"/>
-        </StackPanel>
+    <Grid>
+
+        <!-- Background Gradient -->
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#1C352D" Offset="0"/>
+                <GradientStop Color="#27473B" Offset="0.5"/>
+                <GradientStop Color="#315C4C" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        <!-- Login Card -->
+        <Border Width="420"
+                Padding="40"
+                CornerRadius="20"
+                Background="#FFF9E5"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+
+            <StackPanel>
+
+                <!-- Title -->
+                <TextBlock Text="VICTORIA"
+                           FontSize="40"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Foreground="#1C352D"
+                           Margin="0,0,0,25"/>
+
+                <!-- Username -->
+                <TextBlock Text="Username"
+                           FontSize="15"
+                           FontWeight="SemiBold"
+                           Foreground="#1C352D"
+                           Margin="0,10,0,5"/>
+
+                <Border CornerRadius="10"
+                        Background="White"
+                        BorderBrush="#1C352D"
+                        BorderThickness="1">
+                    <TextBox x:Name="UserName_txt"
+                             Height="35"
+                             FontSize="14"
+                             Padding="10"
+                             BorderThickness="0"
+                             Background="Transparent"
+                             Foreground="#1E201E"
+                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                </Border>
+
+                <!-- Password -->
+                <TextBlock Text="Password"
+                           FontSize="15"
+                           FontWeight="SemiBold"
+                           Foreground="#1C352D"
+                           Margin="0,20,0,5"/>
+
+                <Border CornerRadius="10"
+                        Background="White"
+                        BorderBrush="#1C352D"
+                        BorderThickness="1">
+                    <PasswordBox x:Name="Password_txt"
+                                 Height="35"
+                                 FontSize="14"
+                                 Padding="10"
+                                 BorderThickness="0"
+                                 Background="Transparent"
+                                 Foreground="#1E201E"/>
+                </Border>
+
+                <!-- Login Button -->
+                <Button x:Name="Login_btn"
+                        Content="LOGIN"
+                        Height="45"
+                        Margin="0,30,0,0"
+                        FontWeight="Bold"
+                        Foreground="White"
+                        BorderThickness="0"
+                        Cursor="Hand"
+                        Command="{Binding LoginCommand}"
+                        CommandParameter="{Binding ElementName=Password_txt}">
+
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#11998E" Offset="0"/>
+                            <GradientStop Color="#38EF7D" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                                    CornerRadius="12">
+                                <ContentPresenter HorizontalAlignment="Center"
+                                                  VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+                </Button>
+
+            </StackPanel>
+        </Border>
+
     </Grid>
 </Window>
