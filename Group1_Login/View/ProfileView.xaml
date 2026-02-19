@@ -26,8 +26,8 @@
      
         <Border Width="420"
                 Height="300"
-                Padding="40"
-                CornerRadius="20"
+                Padding="35"
+                CornerRadius="10"
                 Background="#FFF9E5"
                 VerticalAlignment="Center"
                 HorizontalAlignment="Center">
@@ -40,7 +40,7 @@
                            FontWeight="Bold"
                            HorizontalAlignment="Center"
                            Foreground="#1C352D"
-                           Margin="0,0,0,25"/>
+                           Margin="0,0,0,10"/>
 
             
                 <Grid>
@@ -138,6 +138,55 @@
 
                 </Grid>
 
+                <Button Width="70"
+                   Height="30"
+                   HorizontalAlignment="Center" 
+                   Margin="0,20,0,0" 
+                   Padding="10,5" 
+                   FontSize="14" 
+                   FontWeight="SemiBold"    
+                   BorderThickness="0" 
+                   Cursor="Hand"     
+                   Command="{Binding EditCommand}">
+
+                    <Button.Background>
+                        <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                            <GradientStop Color="#11998E" Offset="0"/>
+                            <GradientStop Color="#38EF7D" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+
+                    <Button.Template>
+                        <ControlTemplate TargetType="Button">
+                            <Border Background="{TemplateBinding Background}"
+                            CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                            </Border>
+                        </ControlTemplate>
+                    </Button.Template>
+
+
+                    <StackPanel Orientation="Horizontal"
+                           HorizontalAlignment="Center"
+                           VerticalAlignment="Center">
+                           
+
+
+                        <Path Fill="White"
+                         Width="18"
+                         Height="16"
+                         Stretch="Uniform"
+                         Margin="0,0,8,0"
+                         Data="M3 21h3.75L17.81 9.94l-3.75-3.75L3 17.25zm2-2.92l9.06-9.06l.92.92L5.92 19H5zM18.37 3.29a.996.996 0 0 0-1.41 0l-1.83 1.83l3.75 3.75l1.83-1.83a.996.996 0 0 0 0-1.41z"/>
+
+
+                        <TextBlock Text="Edit"
+                              VerticalAlignment="Center"
+                              Foreground="White"/>
+                    </StackPanel>
+
+                </Button>
             </StackPanel>
         </Border>
     </Grid>

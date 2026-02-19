@@ -18,7 +18,7 @@
 
     <Grid>
 
-        <!-- Background Gradient -->
+        
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
                 <GradientStop Color="#1C352D" Offset="0"/>
@@ -27,7 +27,7 @@
             </LinearGradientBrush>
         </Grid.Background>
 
-        <!-- Login Card -->
+        
         <Border Width="420"
                 Padding="40"
                 CornerRadius="20"
@@ -37,7 +37,7 @@
 
             <StackPanel>
 
-                <!-- Title -->
+                
                 <TextBlock Text="VICTORIA"
                            FontSize="40"
                            FontWeight="Bold"
@@ -45,7 +45,7 @@
                            Foreground="#1C352D"
                            Margin="0,0,0,25"/>
 
-                <!-- Username -->
+                
                 <TextBlock Text="Username"
                            FontSize="15"
                            FontWeight="SemiBold"
@@ -53,20 +53,20 @@
                            Margin="0,10,0,5"/>
 
                 <Border CornerRadius="10"
-                        Background="White"
-                        BorderBrush="#1C352D"
-                        BorderThickness="1">
-                    <TextBox x:Name="UserName_txt"
-                             Height="35"
-                             FontSize="14"
-                             Padding="10"
-                             BorderThickness="0"
-                             Background="Transparent"
-                             Foreground="#1E201E"
-                             Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
+                           Background="White"
+                           BorderBrush="#1C352D"
+                           BorderThickness="1">
+                <TextBox x:Name="UserName_txt"
+                           Height="35"
+                           FontSize="14"
+                           Padding="10"
+                           BorderThickness="0"
+                           Background="Transparent"
+                           Foreground="#1E201E"
+                           Text="{Binding Username, UpdateSourceTrigger=PropertyChanged}"/>
                 </Border>
 
-                <!-- Password -->
+                
                 <TextBlock Text="Password"
                            FontSize="15"
                            FontWeight="SemiBold"
@@ -74,19 +74,19 @@
                            Margin="0,20,0,5"/>
 
                 <Border CornerRadius="10"
-                        Background="White"
-                        BorderBrush="#1C352D"
-                        BorderThickness="1">
-                    <PasswordBox x:Name="Password_txt"
-                                 Height="35"
-                                 FontSize="14"
-                                 Padding="10"
-                                 BorderThickness="0"
-                                 Background="Transparent"
-                                 Foreground="#1E201E"/>
+                           Background="White"
+                           BorderBrush="#1C352D"
+                           BorderThickness="1">
+                <PasswordBox x:Name="Password_txt"
+                           Height="35"
+                           FontSize="14"
+                           Padding="10"
+                           BorderThickness="0"
+                           Background="Transparent"
+                           Foreground="#1E201E"/>
                 </Border>
 
-                <!-- Login Button -->
+                
                 <Button x:Name="Login_btn"
                         Content="LOGIN"
                         Height="45"

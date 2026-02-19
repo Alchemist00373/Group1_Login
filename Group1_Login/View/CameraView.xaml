@@ -61,11 +61,11 @@
         </Grid>
 
         
-        <Border Margin="20,70,20,20"
-                Background="Black"
-                CornerRadius="8"
-                BorderBrush="#CCCCCC"
-                BorderThickness="1">
+            <Border Margin="20,70,20,20"
+                    Background="Black"
+                    CornerRadius="8"
+                    BorderBrush="#CCCCCC"
+                    BorderThickness="1">
 
             <TextBlock Text="Preview"
                        Foreground="White"

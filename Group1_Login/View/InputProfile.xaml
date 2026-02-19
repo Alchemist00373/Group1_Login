@@ -21,38 +21,35 @@
         </Grid.Background>
        
         <Border Width="420"
-        Padding="20"
-        Height="430"
-        CornerRadius="20"
-        Background="#FFF9E5"
-        VerticalAlignment="Center"
-        HorizontalAlignment="Center">
+                Padding="20"
+                Height="430"
+                CornerRadius="10"
+                Background="#FFF9E5"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
 
             <StackPanel>
 
 
-                <TextBlock Text="Profile"
-                   FontSize="25"
+                <TextBlock Text="Edit Profile"
+                   FontSize="26"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"      
-                   Foreground="#1C352D"
-                   Margin="0,0,0,25"/>
+                   Foreground="#1C352D"/>
 
 
                 <TextBlock Text="FirstName"
-                   FontSize="13"
-                   FontWeight="SemiBold"
-                   Foreground="#1C352D"
-                   Margin="10,10,0,5"/>
-                
-
-                <Border CornerRadius="10"
-                 Width="370"
-                Background="White"
-                BorderBrush="#1C352D"
-                BorderThickness="1">
-                    <TextBox x:Name="FirstName_txt"
-                     Height="20"
+                    FontSize="13"
+                    FontWeight="SemiBold"
+                    Foreground="#1C352D"
+                    Margin="10,10,0,5"/>
+                <Border CornerRadius="5"
+                    Width="370"
+                    Background="White"
+                    BorderBrush="#1C352D"
+                    BorderThickness="1">
+                <TextBox x:Name="FirstName_txt"
+                     Height="25"
                      FontSize="12"
                      Padding="10"
                      BorderThickness="0"
@@ -62,101 +59,97 @@
                 </Border>
 
                 <TextBlock Text="Middle Name"
-                       FontSize="13"
-                       FontWeight="SemiBold"
-                       Foreground="#1C352D"
+                     FontSize="13"
+                     FontWeight="SemiBold"
+                     Foreground="#1C352D"
                      Margin="10,10,0,5"/>
-
-                <Border CornerRadius="10"
-                        Width="370"
-                        Background="White"
-                        BorderBrush="#1C352D"
-                        BorderThickness="1">
+                <Border CornerRadius="5"
+                     Width="370"
+                     Background="White"
+                     BorderBrush="#1C352D"
+                     BorderThickness="1">
                     <TextBox x:Name="MiddleName_txt"
-                 Height="20"
-                 FontSize="12"
-                 Padding="10"
-                 BorderThickness="0"
-                 Background="Transparent"
-                 Foreground="#1E201E"
-                 Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}"/>
+                     Height="25"
+                     FontSize="12"
+                     Padding="10"
+                     BorderThickness="0"
+                     Background="Transparent"
+                     Foreground="#1E201E"
+                     Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}"/>
                 </Border>
 
                 <TextBlock Text="Last Name"
-                FontSize="13"
-                FontWeight="SemiBold"
-                Foreground="#1C352D"
-                Margin="10,10,0,5"/>
-
-                <Border CornerRadius="10"
-                 Width="370"
-                 Background="White"
-                 BorderBrush="#1C352D"
-                 BorderThickness="1">
-                    <TextBox x:Name="LastName_txt"
-                  Height="20"
-                  FontSize="12"
-                  Padding="10"
-                  BorderThickness="0"
-                  Background="Transparent"
-                  Foreground="#1E201E"
-                  Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
-                   </Border>
+                     FontSize="13"
+                     FontWeight="SemiBold"
+                     Foreground="#1C352D"
+                     Margin="10,10,0,5"/>
+                <Border CornerRadius="5"
+                     Width="370"
+                     Background="White"
+                     BorderBrush="#1C352D"
+                     BorderThickness="1">
+                <TextBox x:Name="LastName_txt"
+                     Height="25"
+                     FontSize="12"
+                     Padding="10"
+                     BorderThickness="0"
+                     Background="Transparent"
+                     Foreground="#1E201E"
+                     Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
+                </Border>
 
                 <TextBlock Text="Address"
-                 FontSize="13"
-                 FontWeight="SemiBold"
-                 Foreground="#1C352D"
-                Margin="10,10,0,5"/>
-
-              <Border CornerRadius="10"
-                  Width="370"
-                  Background="White"
-                  BorderBrush="#1C352D"
-                  BorderThickness="1">
+                     FontSize="13"
+                     FontWeight="SemiBold"
+                     Foreground="#1C352D"
+                     Margin="10,10,0,5"/>
+                <Border CornerRadius="5"
+                     Width="370"
+                     Background="White"
+                     BorderBrush="#1C352D"
+                     BorderThickness="1">
                <TextBox x:Name="Address_txt"
-           Height="20"
-           FontSize="12"
-           Padding="10"
-           BorderThickness="0"
-           Background="Transparent"
-           Foreground="#1E201E"
-           Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"/>   
+                    Height="25"
+                    FontSize="12"
+                    Padding="10"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Foreground="#1E201E"
+                    Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"/>   
                 </Border>
 
 
                 <TextBlock Text="Religion"
-                  FontSize="13"
-                  FontWeight="SemiBold"
-                  Foreground="#1C352D"
-                  Margin="10,10,0,5"/>
-
-                <Border CornerRadius="10"
-                   Width="370"
-                   Background="White"
-                   BorderBrush="#1C352D"
-                   BorderThickness="1">
+                     FontSize="13"
+                     FontWeight="SemiBold"
+                     Foreground="#1C352D"
+                     Margin="10,10,0,5"/>
+                <Border CornerRadius="5"
+                    Width="370"
+                    Background="White"
+                    BorderBrush="#1C352D"
+                    BorderThickness="1">
                 <TextBox x:Name="Religion_txt"
-                Height="20"
-                FontSize="12"
-                Padding="10"
-                BorderThickness="0"
-                Background="Transparent"
-                Foreground="#1E201E"
-                Text="{Binding Religion, UpdateSourceTrigger=PropertyChanged}"/>      
+                    Height="25"
+                    FontSize="12"
+                    Padding="10"
+                    BorderThickness="0"
+                    Background="Transparent"
+                    Foreground="#1E201E"
+                    Text="{Binding Religion, UpdateSourceTrigger=PropertyChanged}"/>      
                 </Border>
                
                 <Button x:Name="Submit_btn"
-                Content="Submit"
-                Height="30"
-                Width="100"
-                Margin="0,20,0,0"
-                FontWeight="Bold"
-                Foreground="White"
-                BorderThickness="0"
-                Cursor="Hand"
-                Command=""
-                CommandParameter="">
+                    Content="Submit"
+                    Height="30"
+                    Width="100"
+                    Margin="0,20,0,0"
+                    FontWeight="Bold"
+                    Foreground="White"
+                    BorderThickness="0"
+                    Cursor="Hand"
+                    Command=""
+                    CommandParameter="">
 
                     <Button.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
@@ -168,9 +161,9 @@
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
                             <Border Background="{TemplateBinding Background}"
-                            CornerRadius="12">
+                                    CornerRadius="5">
                                 <ContentPresenter HorizontalAlignment="Center"
-                                          VerticalAlignment="Center"/>
+                                    VerticalAlignment="Center"/>
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
