@@ -49,7 +49,8 @@ namespace Group1_Login.ViewModel
         }
         private void Edit(object parameter)
         {
-            MessageBox.Show("Profile Updated Successfully!");
+            InputProfile newWindow = new InputProfile();
+            newWindow.Show();
         }
 
         public event PropertyChangedEventHandler PropertyChanged;

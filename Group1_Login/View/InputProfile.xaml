@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Group1_Login.View"
         mc:Ignorable="d"
-        Title="InputProfile" Height="500" Width="800"
+        Title="InputProfile" Height="600" Width="800"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Background="#1C352D">
@@ -50,8 +50,8 @@
                     BorderThickness="1">
                 <TextBox x:Name="FirstName_txt"
                      Height="25"
-                     FontSize="12"
-                     Padding="10"
+                     FontSize="11"
+                     Padding="5"
                      BorderThickness="0"
                      Background="Transparent"
                      Foreground="#1E201E"
@@ -70,9 +70,9 @@
                      BorderThickness="1">
                     <TextBox x:Name="MiddleName_txt"
                      Height="25"
-                     FontSize="12"
-                     Padding="10"
-                     BorderThickness="0"
+                     FontSize="11"  
+                     Padding="5"
+                     BorderThickness="0"    
                      Background="Transparent"
                      Foreground="#1E201E"
                      Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}"/>
@@ -90,8 +90,8 @@
                      BorderThickness="1">
                 <TextBox x:Name="LastName_txt"
                      Height="25"
-                     FontSize="12"
-                     Padding="10"
+                     FontSize="11"
+                     Padding="5"
                      BorderThickness="0"
                      Background="Transparent"
                      Foreground="#1E201E"
@@ -110,8 +110,8 @@
                      BorderThickness="1">
                <TextBox x:Name="Address_txt"
                     Height="25"
-                    FontSize="12"
-                    Padding="10"
+                    FontSize="11"
+                    Padding="5"
                     BorderThickness="0"
                     Background="Transparent"
                     Foreground="#1E201E"
@@ -131,8 +131,8 @@
                     BorderThickness="1">
                 <TextBox x:Name="Religion_txt"
                     Height="25"
-                    FontSize="12"
-                    Padding="10"
+                    FontSize="11"
+                    Padding="5"
                     BorderThickness="0"
                     Background="Transparent"
                     Foreground="#1E201E"

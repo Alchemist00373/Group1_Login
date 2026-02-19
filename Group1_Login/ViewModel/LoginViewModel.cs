@@ -55,7 +55,7 @@ namespace Group1_Login.ViewModel
                 {
                     DataContext = new DashBoardViewModel(loggedInUser)
                 };
-                newWindow.Show();
+                newWindow.Show();   
 
                 Application.Current.MainWindow.Close();
             }
