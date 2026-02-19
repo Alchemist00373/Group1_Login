@@ -24,4 +24,5 @@ namespace Group1_Login.ViewModel
 
         public event EventHandler CanExecuteChanged;
     }
+
 }

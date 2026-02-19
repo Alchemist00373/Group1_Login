@@ -5,8 +5,137 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Group1_Login.View"
         mc:Ignorable="d"
-        Title="DashBoardView" Height="450" Width="800">
-    <Grid Background="#1C352D">
-        <TextBlock Text="HELLO WORLD!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100" FontWeight="Bold" Foreground="#FFF9E5"/>
+        Title="DashBoardView" 
+        Height="450" 
+        Width="800"
+        xmlns:vm="clr-namespace:Group1_Login.ViewModel">
+
+    <Window.DataContext>
+        <vm:DashBoardViewModel/>
+    </Window.DataContext>
+
+    <Grid>
+        
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#1C352D" Offset="0"/>
+                <GradientStop Color="#27473B" Offset="0.5"/>
+                <GradientStop Color="#315C4C" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        
+        <StackPanel>
+            
+            <TextBlock Text="Welcome to the Dashboard!" 
+                    HorizontalAlignment="Center"  
+                    FontSize="30" 
+                    FontWeight="Bold" 
+                    Foreground="#FFF9E5"
+                    Margin="0,50,0,0"/>
+           
+            
+            <Button Width="100"
+                  Height="45"
+                  HorizontalAlignment="Center" 
+                  Margin="0,90,0,0" 
+                  Padding="10,5" 
+                  FontSize="14" 
+                  FontWeight="SemiBold" 
+                  Foreground="Black" 
+                  BorderThickness="0" 
+                  Cursor="Hand"     
+                  Command="{Binding ProfileCommand}">
+
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#11998E" Offset="0"/>
+                        <GradientStop Color="#38EF7D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center"
+                            VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+                <StackPanel Orientation="Horizontal"
+                  HorizontalAlignment="Center"
+                  VerticalAlignment="Center">
+
+
+                    <Path Fill="White"
+                        Width="18"
+                        Height="18"
+                        Stretch="Uniform"
+                        Margin="0,0,8,0"
+                        Data="M12,2A10,10 0 1,0 22,12A10,10 0 0,0 12,2ZM12,5A3,3 0 1,1 9,8A3,3 0 0,1 12,5ZM12,17.2C9.5,17.2 7.3,16.1 6.1,14.8C6.2,13.5 8.4,12.4 12,12.4C15.6,12.4 17.8,13.5 17.9,14.8C16.7,16.1 14.5,17.2 12,17.2Z"/>
+
+
+                    <TextBlock Text="Profile"
+                         VerticalAlignment="Center"
+                         Foreground="Black"/>
+                </StackPanel>
+
+            </Button>
+            
+         <Button Width="100"
+          Height="45"
+          HorizontalAlignment="Center" 
+          Margin="0,20,0,0" 
+          Padding="10,5" 
+          FontSize="14" 
+          FontWeight="SemiBold" 
+          Foreground="Black" 
+          BorderThickness="0" 
+          Cursor="Hand"     
+          Command="{Binding CameraCommand}">
+
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#11998E" Offset="0"/>
+                        <GradientStop Color="#38EF7D" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
+                <Button.Template>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            CornerRadius="12">
+                            <ContentPresenter HorizontalAlignment="Center"
+                             VerticalAlignment="Center"/>
+                        </Border>
+                    </ControlTemplate>
+                </Button.Template>
+
+
+                <StackPanel Orientation="Horizontal"
+              HorizontalAlignment="Center"
+              VerticalAlignment="Center">
+
+
+                    <Path Fill="White"
+                    Width="18"
+                    Height="18"
+                    Stretch="Uniform"
+                    Margin="0,0,8,0"
+                    Data="M9 2L7.17 4H4c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h16c1.1 0 2-.9 2-2V6c0-1.1-.9-2-2-2h-3.17L15 2zm3 15c-2.76 0-5-2.24-5-5s2.24-5 5-5s5 2.24 5 5s-2.24 5-5 5"/>
+
+
+      <TextBlock Text="Camera"
+     VerticalAlignment="Center"
+     Foreground="Black"/>
+                </StackPanel>
+
+            </Button>
+
+
+
+        </StackPanel>
     </Grid>
 </Window>

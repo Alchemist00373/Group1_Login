@@ -1,0 +1,144 @@
+﻿<Window x:Class="Group1_Login.View.ProfileView"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Group1_Login.View"
+        mc:Ignorable="d"
+        Title="ProfileView"
+        Height="400"
+        Width="800"
+        WindowStartupLocation="CenterScreen"
+        ResizeMode="NoResize"
+        Background="#1C352D">
+
+    <Grid>
+      
+        <Grid.Background>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#1C352D" Offset="0"/>
+                <GradientStop Color="#27473B" Offset="0.5"/>
+                <GradientStop Color="#315C4C" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+
+        
+     
+        <Border Width="420"
+                Height="300"
+                Padding="40"
+                CornerRadius="20"
+                Background="#FFF9E5"
+                VerticalAlignment="Center"
+                HorizontalAlignment="Center">
+
+            <StackPanel>
+
+            
+                <TextBlock Text="Profile View"
+                           FontSize="25"
+                           FontWeight="Bold"
+                           HorizontalAlignment="Center"
+                           Foreground="#1C352D"
+                           Margin="0,0,0,25"/>
+
+            
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="130"/>
+                 
+                        <ColumnDefinition Width="*"/>
+                   
+                    </Grid.ColumnDefinitions>
+
+                    <TextBlock Text="First Name :"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Foreground="#1C352D"
+                               Margin="0,5,0,5"
+                               Grid.Column="0"/>
+                    <TextBlock Text="{Binding FirstName}" 
+                               FontSize="13"
+                               FontWeight="Normal"
+                               Foreground="#1C352D"
+                               Margin="5,5,0,5"
+                               Grid.Column="1"/>
+
+                   
+                    <TextBlock Text="Middle Name :"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Foreground="#1C352D"
+                               Margin="0,5,0,5"
+                               Grid.Column="0"
+                               Grid.Row="1"/>
+                    <TextBlock Text="{Binding MiddleName}" 
+                               FontSize="13"
+                               FontWeight="Normal"
+                               Foreground="#1C352D"
+                               Margin="5,5,0,5"
+                               Grid.Column="1"
+                               Grid.Row="1"/>
+
+              
+                    <TextBlock Text="Last Name :"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Foreground="#1C352D"
+                               Margin="0,5,0,5"
+                               Grid.Column="0"
+                               Grid.Row="2"/>
+                    <TextBlock Text="{Binding LastName}" 
+                               FontSize="13"
+                               FontWeight="Normal"
+                               Foreground="#1C352D"
+                               Margin="5,5,0,5"
+                               Grid.Column="1"
+                               Grid.Row="2"/>
+
+                   
+                    <TextBlock Text="Address :"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Foreground="#1C352D"
+                               Margin="0,5,0,5"
+                               Grid.Column="0"
+                               Grid.Row="3"/>
+                    <TextBlock Text="{Binding Address}" 
+                               FontSize="13"
+                               FontWeight="Normal"
+                               Foreground="#1C352D"
+                               Margin="5,5,0,5"
+                               Grid.Column="1"
+                               Grid.Row="3"/>
+
+                    <TextBlock Text="Religion :"
+                               FontSize="13"
+                               FontWeight="SemiBold"
+                               Foreground="#1C352D"
+                               Margin="0,5,0,5"
+                               Grid.Column="0"
+                               Grid.Row="4"/>
+                    <TextBlock Text="{Binding Religion}" 
+                               FontSize="13"
+                               FontWeight="Normal"
+                               Foreground="#1C352D"
+                               Margin="5,5,0,5"
+                               Grid.Column="1"
+                               Grid.Row="4"/>
+
+                
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                        <RowDefinition Height="Auto"/>
+                    </Grid.RowDefinitions>
+
+                </Grid>
+
+            </StackPanel>
+        </Border>
+    </Grid>
+</Window>

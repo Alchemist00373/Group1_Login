@@ -9,7 +9,12 @@
         Width="900"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Background="#1C352D">
+        Background="#1C352D"
+        xmlns:vm="clr-namespace:Group1_Login.ViewModel">
+
+    <Window.DataContext>
+        <vm:LoginViewModel/>
+    </Window.DataContext>
 
     <Grid>
 

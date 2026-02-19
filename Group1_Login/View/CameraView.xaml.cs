@@ -12,10 +12,12 @@ using System.Windows.Shapes;
 
 namespace Group1_Login.View
 {
-   
-    public partial class DashBoardView : Window
+    /// <summary>
+    /// Interaction logic for CameraView.xaml
+    /// </summary>
+    public partial class CameraView : Window
     {
-        public DashBoardView()
+        public CameraView()
         {
             InitializeComponent();
         }

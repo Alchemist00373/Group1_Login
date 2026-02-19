@@ -12,10 +12,12 @@ using System.Windows.Shapes;
 
 namespace Group1_Login.View
 {
-   
-    public partial class DashBoardView : Window
+    /// <summary>
+    /// Interaction logic for InputProfile.xaml
+    /// </summary>
+    public partial class InputProfile : Window
     {
-        public DashBoardView()
+        public InputProfile()
         {
             InitializeComponent();
         }

@@ -3,6 +3,9 @@ using System.ComponentModel;
 using System.Runtime.CompilerServices;
 using System.Windows.Controls;
 using System.Windows.Input;
+using Group1_Login.Model;
+using Group1_Login.View;
+using System.Windows;
 
 namespace Group1_Login.ViewModel
 {
@@ -36,12 +39,20 @@ namespace Group1_Login.ViewModel
         {
             if (parameter is PasswordBox passwordBox)
             {
-                Password = passwordBox.Password;
+                Password = passwordBox.Password;  
             }
-            if (Username == "admin" && Password == "password")
+
+            
+            bool isValidUser = UserService.ValidateUser(Username, Password);
+
+            if (isValidUser)
             {
                 LoginSucceeded?.Invoke();
-                System.Windows.MessageBox.Show("Congratulation!");
+                System.Windows.MessageBox.Show("Congratulations! Login Successful.");
+                DashBoardView newWindow = new DashBoardView();
+                newWindow.Show();
+
+                Application.Current.MainWindow.Close();
             }
             else
             {

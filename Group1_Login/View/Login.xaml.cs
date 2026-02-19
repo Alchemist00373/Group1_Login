@@ -21,18 +21,6 @@ namespace Group1_Login.View
         public Login()
         {
             InitializeComponent();
-            var vm = new LoginViewModel();
-            vm.LoginSucceeded += OpenDashboard;
-
-            DataContext = vm;
         }
-
-        private void OpenDashboard()
-        {
-            DashBoardView dashboard = new DashBoardView();
-            dashboard.Show();
-            this.Close();
-        
-    }
     }
 }
