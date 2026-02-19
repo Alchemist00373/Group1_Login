@@ -7,12 +7,9 @@
         mc:Ignorable="d"
         Title="DashBoardView" 
         Height="400" 
-        Width="800"
-        xmlns:vm="clr-namespace:Group1_Login.ViewModel">
+        Width="800">
 
-    <Window.DataContext>
-        <vm:DashBoardViewModel/>
-    </Window.DataContext>
+
 
     <Grid>
         

@@ -1,36 +1,39 @@
-﻿using Group1_Login.View;
+﻿using Group1_Login.Model;
+using Group1_Login.View;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Text;
 using System.Windows.Input;
 
 namespace Group1_Login.ViewModel
 {
-    class DashBoardViewModel
+    public class DashBoardViewModel
     {
-        public ICommand  ProfileCommand{ get; }
+        private UserModel _currentUser;
+
+        public ICommand ProfileCommand { get; }
         public ICommand CameraCommand { get; }
 
-        public event Action ProfileProceed;
-        public event Action CameraProceed;
-
-
-        public DashBoardViewModel()
+        public DashBoardViewModel(UserModel currentUser)
         {
+            _currentUser = currentUser;
+
             ProfileCommand = new RelayCommand(Profile);
             CameraCommand = new RelayCommand(Camera);
         }
 
-        public void Profile(object parameter)
+        private void Profile(object parameter)
         {
-            ProfileProceed?.Invoke();
-            ProfileView newWindow = new ProfileView();
+            ProfileView newWindow = new ProfileView
+            {
+                DataContext = new ProfileModelView(_currentUser)
+            };
             newWindow.Show();
         }
 
-        public void Camera(object parameter)
+        private void Camera(object parameter)
         {
-            CameraProceed?.Invoke();
             CameraView newWindow = new CameraView();
             newWindow.Show();
         }

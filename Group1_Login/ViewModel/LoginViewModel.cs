@@ -39,17 +39,22 @@ namespace Group1_Login.ViewModel
         {
             if (parameter is PasswordBox passwordBox)
             {
-                Password = passwordBox.Password;  
+                Password = passwordBox.Password;
             }
 
-            
-            bool isValidUser = UserService.ValidateUser(Username, Password);
+            UserModel loggedInUser = UserService.Users
+                .Find(u => u.Username == Username && u.Password == Password);
 
-            if (isValidUser)
+            if (loggedInUser != null)
             {
                 LoginSucceeded?.Invoke();
                 System.Windows.MessageBox.Show("Congratulations! Login Successful.");
-                DashBoardView newWindow = new DashBoardView();
+
+                // Pass the logged-in user to the dashboard
+                DashBoardView newWindow = new DashBoardView
+                {
+                    DataContext = new DashBoardViewModel(loggedInUser)
+                };
                 newWindow.Show();
 
                 Application.Current.MainWindow.Close();
