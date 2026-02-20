@@ -7,15 +7,15 @@
 
     <Grid>
         <Grid.Background>
-        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-            <GradientStop Color="#1C352D" Offset="0"/>
-            <GradientStop Color="#27473B" Offset="0.5"/>
-            <GradientStop Color="#315C4C" Offset="1"/>
-        </LinearGradientBrush>
+            <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+                <GradientStop Color="#1C352D" Offset="0"/>
+                <GradientStop Color="#27473B" Offset="0.5"/>
+                <GradientStop Color="#315C4C" Offset="1"/>
+            </LinearGradientBrush>
         </Grid.Background>
-        
 
-       
+
+
         <Grid Height="50"
               Background="#000000"
               VerticalAlignment="Top">
@@ -31,13 +31,14 @@
                     Margin="10"
                     Width="70"
                     Height="30"
-                    VerticalAlignment="Center">
-            
-            <Button.Background>
-                <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                    <GradientStop Color="#11998E" Offset="0"/>
-                    <GradientStop Color="#38EF7D" Offset="1"/>
-                </LinearGradientBrush>
+                    VerticalAlignment="Center"
+                    Command="{Binding BackCommand}">
+
+                <Button.Background>
+                    <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
+                        <GradientStop Color="#11998E" Offset="0"/>
+                        <GradientStop Color="#38EF7D" Offset="1"/>
+                    </LinearGradientBrush>
                 </Button.Background>
 
                 <Button.Template>
@@ -60,16 +61,16 @@
                        VerticalAlignment="Center"/>
         </Grid>
 
-        
-            <Border Margin="20,70,20,20"
+
+        <Border Margin="20,70,20,20"
                     Background="Black"
                     CornerRadius="8"
                     BorderBrush="#CCCCCC"
                     BorderThickness="1">
 
             <Image Source="{Binding CameraImage}" Stretch="Uniform"/>
-                
-                
+
+
         </Border>
 
     </Grid>

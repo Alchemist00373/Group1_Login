@@ -9,6 +9,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using System.ComponentModel;
+
 
 namespace Group1_Login.View
 {
@@ -23,13 +25,14 @@ namespace Group1_Login.View
         {
             InitializeComponent();
             _viewModel = new CameraViewModel();
+            _viewModel.CloseAction = Close;
             DataContext = _viewModel;
         }
 
-        protected override void OnClosed(EventArgs e)
+        protected override void OnClosing(CancelEventArgs e)
         {
             _viewModel.StopCamera();
-            base.OnClosed(e);
+            base.OnClosing(e);
         }
     }
 }

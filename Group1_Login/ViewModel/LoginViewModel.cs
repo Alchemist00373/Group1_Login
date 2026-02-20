@@ -48,9 +48,8 @@ namespace Group1_Login.ViewModel
             if (loggedInUser != null)
             {
                 LoginSucceeded?.Invoke();
-                System.Windows.MessageBox.Show("Congratulations! Login Successful.");
+                System.Windows.MessageBox.Show("Login Successful.");
 
-                // Pass the logged-in user to the dashboard
                 DashBoardView newWindow = new DashBoardView
                 {
                     DataContext = new DashBoardViewModel(loggedInUser)
