@@ -147,7 +147,8 @@
                    FontWeight="SemiBold"    
                    BorderThickness="0" 
                    Cursor="Hand"     
-                   Command="{Binding EditCommand}">
+                   Command="{Binding EditCommand}"
+                   CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
 
                     <Button.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">

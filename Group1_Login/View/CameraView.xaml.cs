@@ -17,9 +17,19 @@ namespace Group1_Login.View
     /// </summary>
     public partial class CameraView : Window
     {
+        private CameraViewModel _viewModel;
+
         public CameraView()
         {
             InitializeComponent();
+            _viewModel = new CameraViewModel();
+            DataContext = _viewModel;
+        }
+
+        protected override void OnClosed(EventArgs e)
+        {
+            _viewModel.StopCamera();
+            base.OnClosed(e);
         }
     }
 }

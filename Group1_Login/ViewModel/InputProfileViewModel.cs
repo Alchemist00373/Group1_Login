@@ -1,19 +1,18 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-using System.Windows.Input;
-using Group1_Login.Model;
+﻿using Group1_Login.Model;
 using Group1_Login.View;
-using System.Windows;
+using System;
+using System.Collections.Generic;
 using System.ComponentModel;
-using System.Runtime.CompilerServices;
+using System.Text;
+using System.Windows;
+using System.Windows.Input;
+using Group1_Login.ViewModel;
 
 namespace Group1_Login.ViewModel
 {
-    public class ProfileModelView : INotifyPropertyChanged
+    public class InputProfileViewModel : INotifyPropertyChanged
     {
-       private UserModel _CurrentUser;
-
+        private UserModel _CurrentUser;
         public string FirstName
         {
             get => _CurrentUser.FirstName;
@@ -40,29 +39,36 @@ namespace Group1_Login.ViewModel
             set { _CurrentUser.Religion = value; OnPropertyChanged(nameof(Religion)); }
         }
 
-        public ICommand EditCommand { get; set; }
+        public ICommand SubmitCommand { get; set; }
 
-        public ProfileModelView(UserModel user)
+        public InputProfileViewModel()
         {
-            _CurrentUser = user;
-            EditCommand = new RelayCommand(Edit);
-        }
-        private void Edit(object parameter)
+            _CurrentUser = new UserModel();
+            SubmitCommand = new RelayCommand(Submit);
+        }   
+
+        private void Submit(object obj)
         {
-            InputProfile newWindow = new InputProfile();
-            newWindow.Show();
-            if (parameter is Window window)
+            MessageBox.Show("Profile Updated Successfully!");
+            ProfileView newWindow = new ProfileView
             {
-                window.Close();
+                DataContext = new ProfileModelView(_CurrentUser)
+            };
+            newWindow.Show();
+            if (obj is Window currentWindow)
+            {
+                currentWindow.Close();
             }
         }
-        
+
+
 
         public event PropertyChangedEventHandler PropertyChanged;
-        public void OnPropertyChanged([CallerMemberName] string propertyName = null)
+
+        public void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        }
+    }
 }

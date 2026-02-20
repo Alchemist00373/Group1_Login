@@ -8,7 +8,12 @@
         Title="InputProfile" Height="600" Width="800"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
-        Background="#1C352D">
+        Background="#1C352D"
+        xmlns:vm="clr-namespace:Group1_Login.ViewModel">
+
+    <Window.DataContext>
+        <vm:InputProfileViewModel/>
+    </Window.DataContext>
 
     <Grid>
         
@@ -148,8 +153,8 @@
                     Foreground="White"
                     BorderThickness="0"
                     Cursor="Hand"
-                    Command=""
-                    CommandParameter="">
+                    Command="{Binding SubmitCommand}"
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
 
                     <Button.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
