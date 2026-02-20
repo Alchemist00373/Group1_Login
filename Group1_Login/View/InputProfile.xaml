@@ -5,7 +5,9 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Group1_Login.View"
         mc:Ignorable="d"
-        Title="InputProfile" Height="600" Width="800"
+        Title="InputProfile" 
+        Height="500" 
+        Width="800"
         WindowStartupLocation="CenterScreen"
         ResizeMode="NoResize"
         Background="#1C352D"
@@ -37,10 +39,11 @@
 
 
                 <TextBlock Text="Edit Profile"
-                   FontSize="26"
+                   FontSize="25"
                    FontWeight="Bold"
                    HorizontalAlignment="Center"      
-                   Foreground="#1C352D"/>
+                   Foreground="#1C352D"
+                   Margin="0,0,0,10"/>
 
 
                 <TextBlock Text="FirstName"
@@ -48,11 +51,11 @@
                     FontWeight="SemiBold"
                     Foreground="#1C352D"
                     Margin="10,10,0,5"/>
-                <Border CornerRadius="5"
-                    Width="370"
-                    Background="White"
-                    BorderBrush="#1C352D"
-                    BorderThickness="1">
+                <Border Background="Transparent"
+                        BorderBrush="#1C352D"
+                        BorderThickness="0,0,0,1"
+                        Width="360">
+                    
                 <TextBox x:Name="FirstName_txt"
                      Height="25"
                      FontSize="11"
@@ -68,11 +71,10 @@
                      FontWeight="SemiBold"
                      Foreground="#1C352D"
                      Margin="10,10,0,5"/>
-                <Border CornerRadius="5"
-                     Width="370"
-                     Background="White"
-                     BorderBrush="#1C352D"
-                     BorderThickness="1">
+                <Border Background="Transparent"
+                        BorderBrush="#1C352D"
+                        BorderThickness="0,0,0,1"
+                        Width="360">
                     <TextBox x:Name="MiddleName_txt"
                      Height="25"
                      FontSize="11"  
@@ -88,11 +90,10 @@
                      FontWeight="SemiBold"
                      Foreground="#1C352D"
                      Margin="10,10,0,5"/>
-                <Border CornerRadius="5"
-                     Width="370"
-                     Background="White"
-                     BorderBrush="#1C352D"
-                     BorderThickness="1">
+                <Border Background="Transparent"
+                        BorderBrush="#1C352D"
+                        BorderThickness="0,0,0,1"
+                        Width="360">
                 <TextBox x:Name="LastName_txt"
                      Height="25"
                      FontSize="11"
@@ -108,12 +109,11 @@
                      FontWeight="SemiBold"
                      Foreground="#1C352D"
                      Margin="10,10,0,5"/>
-                <Border CornerRadius="5"
-                     Width="370"
-                     Background="White"
-                     BorderBrush="#1C352D"
-                     BorderThickness="1">
-               <TextBox x:Name="Address_txt"
+                <Border Background="Transparent"
+                        BorderBrush="#1C352D"
+                        BorderThickness="0,0,0,1"
+                        Width="360">
+                    <TextBox x:Name="Address_txt"
                     Height="25"
                     FontSize="11"
                     Padding="5"
@@ -129,11 +129,10 @@
                      FontWeight="SemiBold"
                      Foreground="#1C352D"
                      Margin="10,10,0,5"/>
-                <Border CornerRadius="5"
-                    Width="370"
-                    Background="White"
-                    BorderBrush="#1C352D"
-                    BorderThickness="1">
+                <Border Background="Transparent"
+                        BorderBrush="#1C352D"
+                        BorderThickness="0,0,0,1"
+                        Width="360">
                 <TextBox x:Name="Religion_txt"
                     Height="25"
                     FontSize="11"
