@@ -5,8 +5,136 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Group1_Login.View"
         mc:Ignorable="d"
-        Title="DashBoardView" Height="450" Width="800">
-    <Grid Background="#1C352D">
-        <TextBlock Text="HELLO WORLD!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="100" FontWeight="Bold" Foreground="#FFF9E5"/>
+        Title="Dashboard"
+        Height="600"
+        Width="1000"
+        WindowStartupLocation="CenterScreen"
+        Background="#1C352D">
+
+    <Grid Margin="20">
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="2*" />
+            <ColumnDefinition Width="3*" />
+        </Grid.ColumnDefinitions>
+
+        <!-- ================= LEFT SIDE - CAMERA PANEL ================= -->
+        <Border Grid.Column="0"
+                Background="#254336"
+                CornerRadius="20"
+                Padding="20"
+                Margin="0,0,15,0">
+
+            <StackPanel>
+
+                <TextBlock Text="📷 LIVE CAMERA"
+                           FontSize="22"
+                           FontWeight="Bold"
+                           Foreground="#FFF9E5"
+                           Margin="0,0,0,15"/>
+
+                <!-- Camera Placeholder -->
+                <Border Height="400"
+                        Background="#1C352D"
+                        CornerRadius="15"
+                        BorderBrush="#4CAF50"
+                        BorderThickness="2">
+
+                    <Grid>
+                        <TextBlock Text="Camera Feed Here"
+                                   Foreground="Gray"
+                                   FontSize="18"
+                                   HorizontalAlignment="Center"
+                                   VerticalAlignment="Center"/>
+                    </Grid>
+                </Border>
+
+            </StackPanel>
+        </Border>
+
+
+        <!-- ================= RIGHT SIDE - PERSONAL INFO ================= -->
+        <Border Grid.Column="1"
+                Background="#254336"
+                CornerRadius="20"
+                Padding="30">
+
+            <StackPanel>
+
+                <TextBlock Text="👤 PERSONAL INFORMATION"
+                           FontSize="24"
+                           FontWeight="Bold"
+                           Foreground="#FFF9E5"
+                           Margin="0,0,0,25"/>
+
+                <!-- FULL NAME -->
+                <TextBlock Text="Full Name" Foreground="#FFF9E5"/>
+                <TextBox x:Name="txtName"
+                         Height="40"
+                         Margin="0,5,0,15"
+                         Background="#1C352D"
+                         Foreground="White"
+                         BorderBrush="#4CAF50"
+                         BorderThickness="2"
+                         Padding="10"/>
+
+                <!-- AGE -->
+                <TextBlock Text="Age" Foreground="#FFF9E5"/>
+                <TextBox x:Name="txtAge"
+                         Height="40"
+                         Margin="0,5,0,15"
+                         Background="#1C352D"
+                         Foreground="White"
+                         BorderBrush="#4CAF50"
+                         BorderThickness="2"
+                         Padding="10"/>
+
+                <!-- ADDRESS -->
+                <TextBlock Text="Address" Foreground="#FFF9E5"/>
+                <TextBox x:Name="txtAddress"
+                         Height="40"
+                         Margin="0,5,0,15"
+                         Background="#1C352D"
+                         Foreground="White"
+                         BorderBrush="#4CAF50"
+                         BorderThickness="2"
+                         Padding="10"/>
+
+                <!-- CONTACT -->
+                <TextBlock Text="Contact Number" Foreground="#FFF9E5"/>
+                <TextBox x:Name="txtContact"
+                         Height="40"
+                         Margin="0,5,0,15"
+                         Background="#1C352D"
+                         Foreground="White"
+                         BorderBrush="#4CAF50"
+                         BorderThickness="2"
+                         Padding="10"/>
+
+                <!-- EMAIL -->
+                <TextBlock Text="Email" Foreground="#FFF9E5"/>
+                <TextBox x:Name="txtEmail"
+                         Height="40"
+                         Margin="0,5,0,25"
+                         Background="#1C352D"
+                         Foreground="White"
+                         BorderBrush="#4CAF50"
+                         BorderThickness="2"
+                         Padding="10"/>
+
+                <!-- SAVE BUTTON -->
+                <Button Content="💾 SAVE INFORMATION"
+                        Height="45"
+                        Background="#4CAF50"
+                        Foreground="White"
+                        FontWeight="Bold"
+                        FontSize="16"
+                        BorderThickness="0"
+                        Cursor="Hand"/>
+
+            </StackPanel>
+
+        </Border>
+
     </Grid>
 </Window>

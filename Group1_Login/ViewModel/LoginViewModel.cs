@@ -1,31 +1,25 @@
-﻿using System;
-using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using System.Windows.Controls;
+﻿using System.ComponentModel;
+using System.Windows;
 using System.Windows.Input;
+using Group1_Login.View;
 
 namespace Group1_Login.ViewModel
 {
     public class LoginViewModel : INotifyPropertyChanged
     {
         private string _username;
-        private string _password;
 
         public string Username
         {
             get => _username;
-            set { _username = value; OnPropertyChanged(); }
-        }
-
-        public string Password
-        {
-            get => _password;
-            set { _password = value; OnPropertyChanged(); }
+            set
+            {
+                _username = value;
+                OnPropertyChanged(nameof(Username));
+            }
         }
 
         public ICommand LoginCommand { get; }
-
-        public event Action LoginSucceeded;
 
         public LoginViewModel()
         {
@@ -34,26 +28,30 @@ namespace Group1_Login.ViewModel
 
         private void Login(object parameter)
         {
-            if (parameter is PasswordBox passwordBox)
+            var passwordBox = parameter as System.Windows.Controls.PasswordBox;
+            string password = passwordBox.Password;
+
+            if (Username == "admin" && password == "1234")
             {
-                Password = passwordBox.Password;
-            }
-            if (Username == "admin" && Password == "password")
-            {
-                LoginSucceeded?.Invoke();
-                System.Windows.MessageBox.Show("Congratulation!");
+                DashBoardView dashboard = new DashBoardView();
+                dashboard.Show();
+
+                Application.Current.Windows[0].Close();
             }
             else
             {
-                System.Windows.MessageBox.Show("Invalid username or password.");
+                MessageBox.Show("Invalid Username or Password",
+                                "Login Failed",
+                                MessageBoxButton.OK,
+                                MessageBoxImage.Error);
             }
         }
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        protected void OnPropertyChanged([CallerMemberName] string propertyName = null)
+        protected void OnPropertyChanged(string prop)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(prop));
         }
     }
 }
