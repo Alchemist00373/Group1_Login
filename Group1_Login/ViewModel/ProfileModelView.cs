@@ -44,19 +44,19 @@ namespace Group1_Login.ViewModel
 
         public ProfileModelView(UserModel user)
         {
-            _CurrentUser = user;
+            _CurrentUser = user ?? new UserModel();
             EditCommand = new RelayCommand(Edit);
         }
         private void Edit(object parameter)
         {
             InputProfile newWindow = new InputProfile();
+            newWindow.DataContext = new InputProfileViewModel(_CurrentUser);
             newWindow.Show();
+
             if (parameter is Window window)
-            {
                 window.Close();
-            }
         }
-        
+
 
         public event PropertyChangedEventHandler PropertyChanged;
         public void OnPropertyChanged([CallerMemberName] string propertyName = null)

@@ -13,62 +13,65 @@ namespace Group1_Login.ViewModel
     public class InputProfileViewModel : INotifyPropertyChanged
     {
         private UserModel _CurrentUser;
+
         public string FirstName
         {
-            get => _CurrentUser.FirstName;
+            get => _CurrentUser?.FirstName;
             set { _CurrentUser.FirstName = value; OnPropertyChanged(nameof(FirstName)); }
         }
+
         public string MiddleName
         {
-            get => _CurrentUser.MiddleName;
+            get => _CurrentUser?.MiddleName;
             set { _CurrentUser.MiddleName = value; OnPropertyChanged(nameof(MiddleName)); }
         }
+
         public string LastName
         {
-            get => _CurrentUser.LastName;
+            get => _CurrentUser?.LastName;
             set { _CurrentUser.LastName = value; OnPropertyChanged(nameof(LastName)); }
         }
+
         public string Address
         {
-            get => _CurrentUser.Address;
+            get => _CurrentUser?.Address;
             set { _CurrentUser.Address = value; OnPropertyChanged(nameof(Address)); }
         }
+
         public string Religion
         {
-            get => _CurrentUser.Religion;
+            get => _CurrentUser?.Religion;
             set { _CurrentUser.Religion = value; OnPropertyChanged(nameof(Religion)); }
         }
 
-        public ICommand SubmitCommand { get; set; }
+        public ICommand SubmitCommand { get; }
 
-        public InputProfileViewModel()
+        public InputProfileViewModel(UserModel user)
         {
-            _CurrentUser = new UserModel();
+            _CurrentUser = user ?? new UserModel();
             SubmitCommand = new RelayCommand(Submit);
-        }   
+        }
 
         private void Submit(object obj)
         {
             MessageBox.Show("Profile Updated Successfully!");
+
             ProfileView newWindow = new ProfileView
             {
                 DataContext = new ProfileModelView(_CurrentUser)
             };
+
             newWindow.Show();
+
             if (obj is Window currentWindow)
-            {
                 currentWindow.Close();
-            }
         }
-
-
 
         public event PropertyChangedEventHandler PropertyChanged;
 
-        public void OnPropertyChanged(string propertyName)
+        protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
-
     }
 }

@@ -1,173 +1,187 @@
-﻿<Window x:Class="Group1_Login.View.InputProfile"
-        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
-        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:Group1_Login.View"
-        mc:Ignorable="d"
-        Title="InputProfile" 
-        Height="500" 
-        Width="800"
-        WindowStartupLocation="CenterScreen"
-        ResizeMode="NoResize"
-        Background="#1C352D"
-        xmlns:vm="clr-namespace:Group1_Login.ViewModel">
+﻿<Window
+    x:Class="Group1_Login.View.InputProfile"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:Group1_Login.View"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="InputProfile"
+    Width="800"
+    Height="500"
+    Background="#1C352D"
+    ResizeMode="NoResize"
+    WindowStartupLocation="CenterScreen"
+    mc:Ignorable="d">
 
-    <Window.DataContext>
-        <vm:InputProfileViewModel/>
-    </Window.DataContext>
+
 
     <Grid>
-        
+
         <Grid.Background>
             <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
-                <GradientStop Color="#1C352D" Offset="0"/>
-                <GradientStop Color="#27473B" Offset="0.5"/>
-                <GradientStop Color="#315C4C" Offset="1"/>
+                <GradientStop Offset="0" Color="#1C352D" />
+                <GradientStop Offset="0.5" Color="#27473B" />
+                <GradientStop Offset="1" Color="#315C4C" />
             </LinearGradientBrush>
         </Grid.Background>
-       
-        <Border Width="420"
-                Padding="20"
-                Height="430"
-                CornerRadius="10"
-                Background="#FFF9E5"
-                VerticalAlignment="Center"
-                HorizontalAlignment="Center">
+
+        <Border
+            Width="420"
+            Height="430"
+            Padding="20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="#FFF9E5"
+            CornerRadius="10">
 
             <StackPanel>
 
 
-                <TextBlock Text="Edit Profile"
-                   FontSize="25"
-                   FontWeight="Bold"
-                   HorizontalAlignment="Center"      
-                   Foreground="#1C352D"
-                   Margin="0,0,0,10"/>
+                <TextBlock
+                    Margin="0,0,0,10"
+                    HorizontalAlignment="Center"
+                    FontSize="25"
+                    FontWeight="Bold"
+                    Foreground="#1C352D"
+                    Text="Edit Profile" />
 
 
-                <TextBlock Text="FirstName"
+                <TextBlock
+                    Margin="10,10,0,5"
                     FontSize="13"
                     FontWeight="SemiBold"
                     Foreground="#1C352D"
-                    Margin="10,10,0,5"/>
-                <Border Background="Transparent"
-                        BorderBrush="#1C352D"
-                        BorderThickness="0,0,0,1"
-                        Width="360">
-                    
-                <TextBox x:Name="FirstName_txt"
-                     Height="25"
-                     FontSize="11"
-                     Padding="5"
-                     BorderThickness="0"
-                     Background="Transparent"
-                     Foreground="#1E201E"
-                     Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}"/>
-                </Border>
-
-                <TextBlock Text="Middle Name"
-                     FontSize="13"
-                     FontWeight="SemiBold"
-                     Foreground="#1C352D"
-                     Margin="10,10,0,5"/>
-                <Border Background="Transparent"
-                        BorderBrush="#1C352D"
-                        BorderThickness="0,0,0,1"
-                        Width="360">
-                    <TextBox x:Name="MiddleName_txt"
-                     Height="25"
-                     FontSize="11"  
-                     Padding="5"
-                     BorderThickness="0"    
-                     Background="Transparent"
-                     Foreground="#1E201E"
-                     Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}"/>
-                </Border>
-
-                <TextBlock Text="Last Name"
-                     FontSize="13"
-                     FontWeight="SemiBold"
-                     Foreground="#1C352D"
-                     Margin="10,10,0,5"/>
-                <Border Background="Transparent"
-                        BorderBrush="#1C352D"
-                        BorderThickness="0,0,0,1"
-                        Width="360">
-                <TextBox x:Name="LastName_txt"
-                     Height="25"
-                     FontSize="11"
-                     Padding="5"
-                     BorderThickness="0"
-                     Background="Transparent"
-                     Foreground="#1E201E"
-                     Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}"/>
-                </Border>
-
-                <TextBlock Text="Address"
-                     FontSize="13"
-                     FontWeight="SemiBold"
-                     Foreground="#1C352D"
-                     Margin="10,10,0,5"/>
-                <Border Background="Transparent"
-                        BorderBrush="#1C352D"
-                        BorderThickness="0,0,0,1"
-                        Width="360">
-                    <TextBox x:Name="Address_txt"
-                    Height="25"
-                    FontSize="11"
-                    Padding="5"
-                    BorderThickness="0"
+                    Text="FirstName" />
+                <Border
+                    Width="360"
                     Background="Transparent"
-                    Foreground="#1E201E"
-                    Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}"/>   
+                    BorderBrush="#1C352D"
+                    BorderThickness="0,0,0,1">
+
+                    <TextBox
+                        x:Name="FirstName_txt"
+                        Height="25"
+                        Padding="5"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontSize="11"
+                        Foreground="#1E201E"
+                        Text="{Binding FirstName, UpdateSourceTrigger=PropertyChanged}" />
                 </Border>
 
-
-                <TextBlock Text="Religion"
-                     FontSize="13"
-                     FontWeight="SemiBold"
-                     Foreground="#1C352D"
-                     Margin="10,10,0,5"/>
-                <Border Background="Transparent"
-                        BorderBrush="#1C352D"
-                        BorderThickness="0,0,0,1"
-                        Width="360">
-                <TextBox x:Name="Religion_txt"
-                    Height="25"
-                    FontSize="11"
-                    Padding="5"
-                    BorderThickness="0"
+                <TextBlock
+                    Margin="10,10,0,5"
+                    FontSize="13"
+                    FontWeight="SemiBold"
+                    Foreground="#1C352D"
+                    Text="Middle Name" />
+                <Border
+                    Width="360"
                     Background="Transparent"
-                    Foreground="#1E201E"
-                    Text="{Binding Religion, UpdateSourceTrigger=PropertyChanged}"/>      
+                    BorderBrush="#1C352D"
+                    BorderThickness="0,0,0,1">
+                    <TextBox
+                        x:Name="MiddleName_txt"
+                        Height="25"
+                        Padding="5"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontSize="11"
+                        Foreground="#1E201E"
+                        Text="{Binding MiddleName, UpdateSourceTrigger=PropertyChanged}" />
                 </Border>
-               
-                <Button x:Name="Submit_btn"
-                    Content="Submit"
-                    Height="30"
+
+                <TextBlock
+                    Margin="10,10,0,5"
+                    FontSize="13"
+                    FontWeight="SemiBold"
+                    Foreground="#1C352D"
+                    Text="Last Name" />
+                <Border
+                    Width="360"
+                    Background="Transparent"
+                    BorderBrush="#1C352D"
+                    BorderThickness="0,0,0,1">
+                    <TextBox
+                        x:Name="LastName_txt"
+                        Height="25"
+                        Padding="5"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontSize="11"
+                        Foreground="#1E201E"
+                        Text="{Binding LastName, UpdateSourceTrigger=PropertyChanged}" />
+                </Border>
+
+                <TextBlock
+                    Margin="10,10,0,5"
+                    FontSize="13"
+                    FontWeight="SemiBold"
+                    Foreground="#1C352D"
+                    Text="Address" />
+                <Border
+                    Width="360"
+                    Background="Transparent"
+                    BorderBrush="#1C352D"
+                    BorderThickness="0,0,0,1">
+                    <TextBox
+                        x:Name="Address_txt"
+                        Height="25"
+                        Padding="5"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontSize="11"
+                        Foreground="#1E201E"
+                        Text="{Binding Address, UpdateSourceTrigger=PropertyChanged}" />
+                </Border>
+
+
+                <TextBlock
+                    Margin="10,10,0,5"
+                    FontSize="13"
+                    FontWeight="SemiBold"
+                    Foreground="#1C352D"
+                    Text="Religion" />
+                <Border
+                    Width="360"
+                    Background="Transparent"
+                    BorderBrush="#1C352D"
+                    BorderThickness="0,0,0,1">
+                    <TextBox
+                        x:Name="Religion_txt"
+                        Height="25"
+                        Padding="5"
+                        Background="Transparent"
+                        BorderThickness="0"
+                        FontSize="11"
+                        Foreground="#1E201E"
+                        Text="{Binding Religion, UpdateSourceTrigger=PropertyChanged}" />
+                </Border>
+
+                <Button
+                    x:Name="Submit_btn"
                     Width="100"
+                    Height="30"
                     Margin="0,20,0,0"
-                    FontWeight="Bold"
-                    Foreground="White"
                     BorderThickness="0"
-                    Cursor="Hand"
                     Command="{Binding SubmitCommand}"
-                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}">
+                    CommandParameter="{Binding RelativeSource={RelativeSource AncestorType=Window}}"
+                    Content="Submit"
+                    Cursor="Hand"
+                    FontWeight="Bold"
+                    Foreground="White">
 
                     <Button.Background>
                         <LinearGradientBrush StartPoint="0,0" EndPoint="1,0">
-                            <GradientStop Color="#11998E" Offset="0"/>
-                            <GradientStop Color="#38EF7D" Offset="1"/>
+                            <GradientStop Offset="0" Color="#11998E" />
+                            <GradientStop Offset="1" Color="#38EF7D" />
                         </LinearGradientBrush>
                     </Button.Background>
 
                     <Button.Template>
                         <ControlTemplate TargetType="Button">
-                            <Border Background="{TemplateBinding Background}"
-                                    CornerRadius="5">
-                                <ContentPresenter HorizontalAlignment="Center"
-                                    VerticalAlignment="Center"/>
+                            <Border Background="{TemplateBinding Background}" CornerRadius="5">
+                                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
                             </Border>
                         </ControlTemplate>
                     </Button.Template>
@@ -178,6 +192,6 @@
         </Border>
 
     </Grid>
-        
-    
+
+
 </Window>
